@@ -5,7 +5,7 @@
 
 # dotenv files
 .env
-
+.env/
 # Ignore Python virtual environments
 venv/
 .venv/
