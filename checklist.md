@@ -1,8 +1,22 @@
 ## Checklista - Pokémon Collector
 - [x] Testa connection till databas
 - [x] Testa connection till Pokémon API
-- [ ] 
-- [ ] 
+- [ ] Skapa funktion för att hämta alla sets
+- [ ] Spara sets-data i Supabase-databas
+- [x] Skapa tabell för `sets`,
+- [ ] Skapa tabell för `cards`, 
+- [ ] Skapa tabell för `my_collection`
+- [ ] Skapa funktion för att hämta kort per set
+- [ ] Spara kort i databasen
+- [ ] Bygg enkel frontend med Streamlit
+- [ ] Visa alla sets i frontend
+- [ ] Visa kort i valt set
+- [ ] Låt användare markera kort som "ägd"
+- [ ] Spara användarens samling i databasen
+- [ ] Visa statistik (t.ex. antal ägda/saknade kort)
+- [ ] Lägg till sökfunktion på kortnamn
+- [ ] Strukturera projektet i `src/` och `frontend/`
+- [ ] Lägg till README med projektbeskrivning
 - [ ] 
 - [ ] 
 - [ ] 
