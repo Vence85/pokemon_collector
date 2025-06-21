@@ -2,6 +2,7 @@ import os
 import sys
 import requests
 import psycopg2
+from postgrest.exceptions import APIError
 from dotenv import load_dotenv
 from supabase import create_client
 load_dotenv()
@@ -43,31 +44,29 @@ def get_cards_for_set(set_id):
     return cards
 
 def save_cards_to_db(cards, set_id):
-    # För varje kort, bygg en dict med de kolumner du vill sätta
+    # Bygg listan med exakt de fält du vill spara:
     to_insert = []
     for c in cards:
-        small_img = c["images"].get("small")
-        large_img = c["images"].get("large")
-
-        if not small_img or not large_img:
-            print(f"⚠️ Kort {c['id']} saknar bild, sparar ändå med None.")
-
         to_insert.append({
-            "id":          c["id"],
-            "name":        c["name"],
-            "set_id":      set_id,
-            "number":      c["number"],
-            "rarity":      c.get("rarity"),
-            "image_small": small_img,
-            "image_large": large_img
+            "id":           c["id"],
+            "name":         c["name"],
+            "set_id":       set_id,
+            "number":       c["number"],
+            "rarity":       c.get("rarity"),
+            "image_small":  c.get("images", {}).get("small"),
+            "image_large":  c.get("images", {}).get("large")
         })
 
-    # Batch-insertar alla kort
-    resp = supabase.table("cards").insert(to_insert).execute()
-    if resp.get("status_code") not in (200, 201):
-        print("❌ Fel vid insert:", resp)
-    else:
-        print(f"💾 {len(cards)} kort skickades till Supabase via REST")
+    try:
+        # Skicka en enda batch-insert
+        resp = supabase.table("cards").insert(to_insert).execute()
+    except APIError as e:
+        print(f"❌ Misslyckades att spara korten för set {set_id}: {e}")
+        return
+
+    # Om vi når hit så lyckades det
+    inserted = len(resp.data or [])
+    print(f"✅ Infogade {inserted} kort för set {set_id}")
 
     # Markera setet som klart
     supabase.table("sets").update({"cards_loaded": True}).eq("id", set_id).execute()
