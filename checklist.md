@@ -4,9 +4,9 @@
 - [ ] Skapa funktion för att hämta alla sets
 - [ ] Spara sets-data i Supabase-databas
 - [x] Skapa tabell för `sets`,
-- [ ] Skapa tabell för `cards`, 
+- [x] Skapa tabell för `cards`, 
 - [ ] Skapa tabell för `my_collection`
-- [ ] Skapa funktion för att hämta kort per set
+- [x] Skapa funktion för att hämta kort per set (Hämtat tilloch med set base2)
 - [ ] Spara kort i databasen
 - [ ] Bygg enkel frontend med Streamlit
 - [ ] Visa alla sets i frontend
