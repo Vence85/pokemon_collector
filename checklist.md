@@ -6,7 +6,7 @@
 - [x] Skapa tabell för `sets`,
 - [x] Skapa tabell för `cards`, 
 - [ ] Skapa tabell för `my_collection`
-- [x] Skapa funktion för att hämta kort per set (McDonald's Collection 2012 (mcd12) – 2012/06/15
+- [x] Skapa funktion för att hämta kort per set (Alla kort är hämtade)
 - [ ] Spara kort i databasen
 - [ ] Bygg enkel frontend med Streamlit
 - [ ] Visa alla sets i frontend
