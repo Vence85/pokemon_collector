@@ -61,7 +61,7 @@ def save_cards_to_db(cards, set_id):
         # Skicka en enda batch-insert
         resp = supabase.table("cards").insert(to_insert).execute()
     except APIError as e:
-        print(f"❌ Misslyckades att spara korten för set {set_id}: {e}")
+        print(f"❌❌❌❌❌❌❌ Misslyckades att spara korten för set ❌❌❌❌❌❌ {set_id}: {e}")
         return
 
     # Om vi når hit så lyckades det
