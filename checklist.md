@@ -6,7 +6,7 @@
 - [x] Skapa tabell för `sets`,
 - [x] Skapa tabell för `cards`, 
 - [ ] Skapa tabell för `my_collection`
-- [x] Skapa funktion för att hämta kort per set (Hämtat tilloch med set: bSM Black Star Promos (smp) – 2017/02/03)
+- [x] Skapa funktion för att hämta kort per set (McDonald's Collection 2012 (mcd12) – 2012/06/15
 - [ ] Spara kort i databasen
 - [ ] Bygg enkel frontend med Streamlit
 - [ ] Visa alla sets i frontend
