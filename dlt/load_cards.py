@@ -1,7 +1,6 @@
 import os
 import sys
 import requests
-import psycopg2
 from postgrest.exceptions import APIError
 from dotenv import load_dotenv
 from supabase import create_client
