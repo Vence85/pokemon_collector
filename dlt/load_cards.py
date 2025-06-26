@@ -85,3 +85,4 @@ if __name__ == "__main__":
     cards = get_cards_for_set(set_id)
     save_cards_to_db(cards, set_id)
 
+
