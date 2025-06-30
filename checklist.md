@@ -17,7 +17,7 @@
 - [ ] Lägg till sökfunktion på kortnamn
 - [ ] Strukturera projektet i `src/` och `frontend/`
 - [ ] Lägg till README med projektbeskrivning
-- [ ] 
+- [ ] Lägga till en wishlist för kort man VILL ha 
 - [ ] 
 - [ ] 
 - [ ] 
